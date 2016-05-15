@@ -11,10 +11,10 @@ namespace FirmCrm.Database.Models
     {
         public Address(string street, int number, int postalCode, string city)
         {
-            this.Street = Street;
-            this.Number = Number;
-            this.PostalCode = PostalCode;
-            this.City = City;
+            this.Street = street;
+            this.Number = number;
+            this.PostalCode = postalCode;
+            this.City = city;
         }
         public int AddressId { get; set; }
         public string Street { get; set; }

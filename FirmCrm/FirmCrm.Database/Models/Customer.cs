@@ -10,8 +10,8 @@ namespace FirmCrm.Database.Models
     {
         public Customer(string lastName, string firstName, Address address)
         {
-            this.LastName = LastName;
-            this.FirstName = FirstName;
+            this.LastName = lastName;
+            this.FirstName = firstName;
             this.Address = address;
         }
         public int CustomerId { get; set; }
