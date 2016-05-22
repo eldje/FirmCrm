@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FirmCrm.Database.Models
+﻿namespace FirmCrm.Database.Models
 {
     public class Address 
     {
         public Address(string street, int number, int postalCode, string city)
         {
-            this.Street = Street;
+            this.Street = street;
             this.Number = Number;
             this.PostalCode = PostalCode;
             this.City = City;

@@ -51,9 +51,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Context\FirmCrmContext.cs" />
-    <Compile Include="Migrations\201605142142074_FirstMigration.cs" />
-    <Compile Include="Migrations\201605142142074_FirstMigration.Designer.cs">
-      <DependentUpon>201605142142074_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201605162219544_FirstMigration.cs" />
+    <Compile Include="Migrations\201605162219544_FirstMigration.Designer.cs">
+      <DependentUpon>201605162219544_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605142142074_FirstMigration.resx">
-      <DependentUpon>201605142142074_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605162219544_FirstMigration.resx">
+      <DependentUpon>201605162219544_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -33,13 +33,27 @@ namespace FirmCrm.Database.Migrations
                 .PrimaryKey(t => t.CategoryId);
             
             CreateTable(
+                "dbo.ProductProperties",
+                c => new
+                    {
+                        ProductPropertyId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Category_CategoryId = c.Int(),
+                    })
+                .PrimaryKey(t => t.ProductPropertyId)
+                .ForeignKey("dbo.Categories", t => t.Category_CategoryId)
+                .Index(t => t.Category_CategoryId);
+            
+            CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
                         CutomerNumber = c.Int(nullable: false),
+                        CustomerStatus = c.Int(nullable: false),
                         LastName = c.String(),
                         FirstName = c.String(),
+                        ReductionRate = c.Int(nullable: false),
                         AddressId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.CustomerId)
@@ -64,6 +78,7 @@ namespace FirmCrm.Database.Migrations
                     {
                         ProductId = c.Int(nullable: false, identity: true),
                         CatId = c.Int(nullable: false),
+                        ProductStatus = c.Int(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
                         Photo = c.Binary(),
@@ -110,16 +125,19 @@ namespace FirmCrm.Database.Migrations
             DropForeignKey("dbo.Products", "Supplier_SupplierId", "dbo.Suppliers");
             DropForeignKey("dbo.Suppliers", "AddressId", "dbo.Addresses");
             DropForeignKey("dbo.Customers", "AddressId", "dbo.Addresses");
+            DropForeignKey("dbo.ProductProperties", "Category_CategoryId", "dbo.Categories");
             DropIndex("dbo.Orders", new[] { "CustomerId" });
             DropIndex("dbo.Suppliers", new[] { "AddressId" });
             DropIndex("dbo.Products", new[] { "Supplier_SupplierId" });
             DropIndex("dbo.OrderRules", new[] { "ProductId" });
             DropIndex("dbo.Customers", new[] { "AddressId" });
+            DropIndex("dbo.ProductProperties", new[] { "Category_CategoryId" });
             DropTable("dbo.Orders");
             DropTable("dbo.Suppliers");
             DropTable("dbo.Products");
             DropTable("dbo.OrderRules");
             DropTable("dbo.Customers");
+            DropTable("dbo.ProductProperties");
             DropTable("dbo.Categories");
             DropTable("dbo.Addresses");
         }

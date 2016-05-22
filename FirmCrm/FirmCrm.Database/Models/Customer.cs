@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FirmCrm.Database.Models
+﻿namespace FirmCrm.Database.Models
 {
     class Customer
     {
@@ -16,8 +10,10 @@ namespace FirmCrm.Database.Models
         }
         public int CustomerId { get; set; }
         public int CutomerNumber { get; set; }
+        public int CustomerStatus { get; set; } = 1;
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public int ReductionRate { get; set; } = 0;
         public int AddressId { get; set; }
         public Address Address { get; set; }
     }

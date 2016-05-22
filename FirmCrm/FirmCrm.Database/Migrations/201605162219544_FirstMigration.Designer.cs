@@ -13,7 +13,7 @@ namespace FirmCrm.Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605142142074_FirstMigration"; }
+            get { return "201605162219544_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source
